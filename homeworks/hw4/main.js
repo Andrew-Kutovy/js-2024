@@ -50,11 +50,48 @@ function listFromArrayBuilder(array) {
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
 // Для кожного об'єкту окремий блок.
-
+function castomLiBuilder(array) {
+    for (let item of array) {
+        document.write('<div>');
+        for (let field in item) {
+            document.write(`<p>${field}: ${item[field]}</p>`)
+        }
+        document.write('</div>');
+    }
+}
 
 // - створити функцію яка повертає найменьше число з масиву
-// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+function minimaizer(array) {
+    let min = 0;
+    for (let num of array) {
+        if (num < min)  min = num;
+    }
+    return min
+}
+
+// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
+// Приклад sum([1,2,10]) //->13
+function sum(arr) {
+    let sum = 0;
+    for (let num of arr) {
+        sum += num;
+    }
+    return sum;
+}
+
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+function swap(arr, index1, index2) {
+    let [val1, val2] = [arr[index1], arr[index2]];
+    [arr[index1], arr[index2]] = [val2, val1];
+    return arr
+}
+
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+function exchange(sumUAH,currencyValues,exchangeCurrency) {
+    let value;
+    for (let i = 0 ; i<currencyValues.length; i++){
+        if (exchangeCurrency === currencyValues[i].currency) value = +currencyValues[i].value
+    } console.log(sumUAH/value)
+}
