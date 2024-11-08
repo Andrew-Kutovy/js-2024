@@ -5,6 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-<script src="test.js"></script>
+<script src="test.js">
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+    // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
+    // Для кожного об'єкту окремий блок.
+    function castomLiBuilder(array) {
+        for (let item of array) {
+            document.write('<div>');
+            for (let field in item) document.write(`<p>${field}</p>`)
+            document.write('</div>');
+        }
+    }
+    castomLiBuilder(users)
+</script>
 </body>
 </html>
