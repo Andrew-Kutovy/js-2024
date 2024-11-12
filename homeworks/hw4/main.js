@@ -62,7 +62,7 @@ function castomLiBuilder(array) {
 
 // - створити функцію яка повертає найменьше число з масиву
 function minimaizer(array) {
-    let min = 0;
+    let min = array[0];
     for (let num of array) {
         if (num < min)  min = num;
     }
