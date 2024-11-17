@@ -1,9 +1,28 @@
-// - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
-// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-function swap(arr, index1, index2) {
-    let [val1, val2] = [arr[index1], arr[index2]];
-    [arr[index1], arr[index2]] = [val2, val1];
-    return arr
-}
+﻿// ==========================
+// - є масив
+ let coursesAndDurationArray = [
+     {title: 'JavaScript Complex', monthDuration: 5},
+     {title: 'Java Complex', monthDuration: 6},
+     {title: 'Python Complex', monthDuration: 6},
+     {title: 'QA Complex', monthDuration: 4},
+     {title: 'FullStack', monthDuration: 7},
+     {title: 'Frontend', monthDuration: 4}
+ ];
+// -- відсортувати його за спаданням за monthDuration
+let newArr = coursesAndDurationArray.sort((a,b) => a.monthDuration > b.monthDuration)
+console.log(newArr);
 
-console.log(swap([11,22,33,44],0,1))
+// -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+let copy = coursesAndDurationArray.filter(i => i.monthDuration > 5)
+console.log(copy)
+
+// -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+let copy2 = coursesAndDurationArray.map((value, index)=> {
+    let newVal = {
+        id: index +1,
+        title: value.title,
+        monthDuration: value.monthDuration
+    }
+    return newVal;
+})
+console.log(copy2)
